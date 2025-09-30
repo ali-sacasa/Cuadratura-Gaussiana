@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aproximar-la-integral-de-fx-x6-x2-sin2x-en-el-intervalo-1-3" class="md-skip">
+        <a href="#tutorial-de-uso-cuadratura-gauss-legendre" class="md-skip">
           Skip to content
         </a>
       
@@ -221,6 +221,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Tutorial
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -232,6 +245,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aproximacion-de-una-integral-definida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aproximación de una integral definida
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -279,6 +320,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aproximacion-de-una-integral-definida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aproximación de una integral definida
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -293,21 +351,25 @@
 
 
 
-<p># Tutorial de Uso</p>
-<p>A continuación se presentan ejemplos concretos que ilustran cómo emplear el módulo <code>gauss\_quadrature.py</code> para aproximar integrales definidas de funciones complejas, combinando la precisión de la cuadratura Gauss-Legendre con la elegancia del análisis simbólico.</p>
-<p>```python</p>
-<p>from gauss_quadrature import funcion, obtener_puntos_pesos_reescalados, funcion_taylor</p>
-<p>import numpy as np</p>
-<h1 id="aproximar-la-integral-de-fx-x6-x2-sin2x-en-el-intervalo-1-3">Aproximar la integral de f(x) = x^6 - x^2 sin(2x) en el intervalo [1, 3]<a class="headerlink" href="#aproximar-la-integral-de-fx-x6-x2-sin2x-en-el-intervalo-1-3" title="Permanent link">&para;</a></h1>
-<h1 id="usando-4-nodos-de-gauss-legendre-para-optimizar-precision-con-un-minimo-de-evaluaciones">Usando 4 nodos de Gauss-Legendre para optimizar precisión con un mínimo de evaluaciones<a class="headerlink" href="#usando-4-nodos-de-gauss-legendre-para-optimizar-precision-con-un-minimo-de-evaluaciones" title="Permanent link">&para;</a></h1>
-<p>puntos, pesos = obtener_puntos_pesos_reescalados(1, 3, 4)</p>
-<p>resultado = sum(pesos * funcion(puntos))</p>
-<p>print("Integral aproximada:", resultado)</p>
-<h1 id="ahora-aproximamos-la-misma-funcion-mediante-expansion-de-taylor-de-grado-3">Ahora, aproximamos la misma función mediante expansión de Taylor de grado 3<a class="headerlink" href="#ahora-aproximamos-la-misma-funcion-mediante-expansion-de-taylor-de-grado-3" title="Permanent link">&para;</a></h1>
-<h1 id="esta-tecnica-transforma-el-termino-trascendental-en-un-polinomio-compatible-con-la-cuadratura">Esta técnica transforma el término trascendental en un polinomio, compatible con la cuadratura<a class="headerlink" href="#esta-tecnica-transforma-el-termino-trascendental-en-un-polinomio-compatible-con-la-cuadratura" title="Permanent link">&para;</a></h1>
-<p>valores, expr = funcion_taylor(np.array([1.0, 2.0, 3.0]), 3)</p>
-<p>print("Valores aproximados con Taylor:", valores)</p>
-<p>print("Expresión simbólica de la función truncada:", expr)</p>
+<h1 id="tutorial-de-uso-cuadratura-gauss-legendre">Tutorial de Uso – Cuadratura Gauss-Legendre<a class="headerlink" href="#tutorial-de-uso-cuadratura-gauss-legendre" title="Permanent link">&para;</a></h1>
+<p>En este tutorial se muestra cómo utilizar el módulo "gauss_quadrature.py" para aproximar integrales mediante la <strong>cuadratura Gauss-Legendre</strong>, incluyendo la aplicación de <strong>expansión de Taylor</strong> para funciones trascendentales.</p>
+<hr />
+<h2 id="aproximacion-de-una-integral-definida">Aproximación de una integral definida<a class="headerlink" href="#aproximacion-de-una-integral-definida" title="Permanent link">&para;</a></h2>
+<p>Consideremos la función</p>
+<div class="arithmatex">\[
+\phi(t) = t^6 - t^2 \sin(2t)
+\]</div>
+<p>y el intervalo de integración <span class="arithmatex">\([1,3]\)</span>. Podemos aproximar su integral usando <span class="arithmatex">\(N\)</span> nodos de Gauss-Legendre</p>
+<p>```python
+from gauss_quadrature import funcion, obtener_puntos_pesos_reescalados
+import numpy as np</p>
+<h1 id="numero-de-nodos">Número de nodos<a class="headerlink" href="#numero-de-nodos" title="Permanent link">&para;</a></h1>
+<p>N = 4</p>
+<h1 id="obtener-puntos-y-pesos-reescalados-al-intervalo-13">Obtener puntos y pesos reescalados al intervalo [1,3]<a class="headerlink" href="#obtener-puntos-y-pesos-reescalados-al-intervalo-13" title="Permanent link">&para;</a></h1>
+<p>puntos, pesos = obtener_puntos_pesos_reescalados(1, 3, N)</p>
+<h1 id="evaluar-la-integral-numericamente">Evaluar la integral numéricamente<a class="headerlink" href="#evaluar-la-integral-numericamente" title="Permanent link">&para;</a></h1>
+<p>resultado = np.sum(pesos*funcion(puntos))
+print("Integral aproximada", resultado)</p>
 
 
 

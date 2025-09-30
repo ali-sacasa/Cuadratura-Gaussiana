@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#referencia-de-funciones" class="md-skip">
+        <a href="#referencia-de-funciones-gauss-legendre" class="md-skip">
           Skip to content
         </a>
       
@@ -241,6 +241,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Referencia
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -252,6 +265,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documentacion-automatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación automática
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gauss_quadrature" class="md-nav__link">
+    <span class="md-ellipsis">
+      gauss_quadrature
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="gauss_quadrature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notas-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notas importantes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -277,6 +342,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documentacion-automatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación automática
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gauss_quadrature" class="md-nav__link">
+    <span class="md-ellipsis">
+      gauss_quadrature
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="gauss_quadrature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notas-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notas importantes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -291,9 +397,10 @@
 
 
 
-<h1 id="referencia-de-funciones">Referencia de funciones<a class="headerlink" href="#referencia-de-funciones" title="Permanent link">&para;</a></h1>
-<p>Este módulo contiene las funciones implementadas para aproximar integrales mediante <strong>cuadratura Gauss-Legendre ** y manipulación simbólica con </strong>SymPy**.</p>
-<h1 id="referencia-de-funciones_1">Referencia de funciones<a class="headerlink" href="#referencia-de-funciones_1" title="Permanent link">&para;</a></h1>
+<h1 id="referencia-de-funciones-gauss-legendre">Referencia de Funciones – Gauss-Legendre<a class="headerlink" href="#referencia-de-funciones-gauss-legendre" title="Permanent link">&para;</a></h1>
+<p>Esta página contiene la documentación automática de las funciones definidas en el módulo <code>gauss_quadrature.py</code>, generada mediante <strong>mkdocstrings</strong>. Todos los docstrings siguen el estilo <strong>Google</strong> y contienen ejemplos de uso, incluyendo LaTeX para fórmulas matemáticas.</p>
+<hr />
+<h2 id="documentacion-automatica">Documentación automática<a class="headerlink" href="#documentacion-automatica" title="Permanent link">&para;</a></h2>
 
 
 <div class="doc doc-object doc-module">
@@ -329,7 +436,14 @@
 
     </div>
 
-</div>
+</div><hr />
+<h3 id="notas-importantes">Notas importantes<a class="headerlink" href="#notas-importantes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>mkdocstrings</code> lee los docstrings de <code>gauss_quadrature.py</code> y genera la documentación automáticamente.  </li>
+<li>Los docstrings incluyen ejemplos ejecutables en Python y notación matemática LaTeX para mejorar la comprensión.  </li>
+<li>Cada vez que modifiques el código fuente, al correr <code>mkdocs serve</code> la página de referencia se actualizará automáticamente.  </li>
+<li>La combinación de <strong>cuadratura Gauss-Legendre</strong> y <strong>expansión de Taylor</strong> queda documentada tanto en los docstrings como en ejemplos prácticos.</li>
+</ul>
 
 
 
