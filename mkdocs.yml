@@ -1,0 +1,17 @@
+site_name: Documentación sobre Cuadratura Gaussiana
+nav:
+  - Home: index.md
+  - Explicación: explanation.md
+  - Tutoriales: tutorials.md
+  - Referencia: reference.md
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - mkdocstrings
