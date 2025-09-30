@@ -24,11 +24,19 @@ La documentación se genera automáticamente utilizando `mkdocstrings`, garantiz
 
 
 
-A continuación, se listan todas las funciones disponibles en el módulo:
+A continuación, se listan todas las funciones disponibles en el módulo.
 
 
 
 ::: gauss\_quadrature
+
+&nbsp;   handler: python
+
+&nbsp;   options:
+
+&nbsp;     docstring\_style: google
+
+&nbsp;     paths: \[".."]
 
 
 
