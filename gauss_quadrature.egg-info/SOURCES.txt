@@ -1,0 +1,6 @@
+gauss_quadrature.py
+setup.py
+gauss_quadrature.egg-info/PKG-INFO
+gauss_quadrature.egg-info/SOURCES.txt
+gauss_quadrature.egg-info/dependency_links.txt
+gauss_quadrature.egg-info/top_level.txt
