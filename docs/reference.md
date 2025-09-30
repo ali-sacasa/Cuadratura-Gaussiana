@@ -1,20 +1,13 @@
-\# Referencia de funciones
+# Referencia de funciones
 
 
 
-Este módulo contiene las funciones implementadas para aproximar integrales mediante \*\*cuadratura Gauss-Legendre\*\* y manipulación simbólica con \*\*SymPy\*\*.
+Este módulo contiene las funciones implementadas para aproximar integrales mediante **cuadratura Gauss-Legendre ** y manipulación simbólica con **SymPy**.
 
-\# Documentación de funciones
+# Referencia de funciones
 
-
-
-::: gauss\_quadrature
-
-    handler: python
-
-    options:
-
-      docstring\_style: google
-
-      paths: \[".."]
-
+::: gauss_quadrature
+    handler: python
+    options:
+      docstring_style: google
+      paths: [".."]   # Sube un nivel desde docs para encontrar gauss_quadrature.py
