@@ -488,8 +488,7 @@ numérica. La función está vectorizada para operar sobre arrays de NumPy.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">funcion</span><span class="p">(</span><span class="n">t_values</span><span class="p">)</span>
 <span class="go">array([ -0.81859485,  54.90729447])</span>
 </code></pre></div>
-    <p>La función en t=2.0:
-<span class="arithmatex">\(\phi(2) = 2^6 - 2^2 \cdot \sin(4) pprox 64 - 4 \cdot (-0.7568) pprox 54.9073\)</span></p>
+    <p>La función en t=2.0 es <span class="arithmatex">\(\phi(2) = 2^6 - 2^2  \sin(4) = 64 - 4 (-0.7568) = 54.9073\)</span></p>
 
 
             <details class="quote">
@@ -518,8 +517,7 @@ numérica. La función está vectorizada para operar sobre arrays de NumPy.</p>
 <span class="normal">36</span>
 <span class="normal">37</span>
 <span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">funcion</span><span class="p">(</span><span class="n">variable_independiente</span><span class="p">):</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">funcion</span><span class="p">(</span><span class="n">variable_independiente</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Evalúa la función $\phi(t) = t^6 - t^2 sin(2t)$ en un punto o array de puntos.</span>
 
 <span class="sd">    Esta función representa el integrando principal del problema de integración</span>
@@ -541,8 +539,7 @@ numérica. La función está vectorizada para operar sobre arrays de NumPy.</p>
 <span class="sd">        &gt;&gt;&gt; funcion(t_values)</span>
 <span class="sd">        array([ -0.81859485,  54.90729447])</span>
 
-<span class="sd">        La función en t=2.0:</span>
-<span class="sd">        $\phi(2) = 2^6 - 2^2 \cdot \sin(4) \approx 64 - 4 \cdot (-0.7568) \approx 54.9073$</span>
+<span class="sd">        La función en t=2.0 es $\phi(2) = 2^6 - 2^2  \sin(4) = 64 - 4 (-0.7568) = 54.9073$</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">variable_independiente</span><span class="o">**</span><span class="mi">6</span> <span class="o">-</span> <span class="n">variable_independiente</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">variable_independiente</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -623,7 +620,8 @@ al intervalo [a, b] mediante un cambio de variable lineal.</p>
 
             <details class="quote">
               <summary>Source code in <code>gauss_quadrature.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">43</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">42</span>
+<span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
@@ -660,8 +658,7 @@ al intervalo [a, b] mediante un cambio de variable lineal.</p>
 <span class="normal">77</span>
 <span class="normal">78</span>
 <span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">obtener_puntos_pesos_reescalados</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">obtener_puntos_pesos_reescalados</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Calcula los puntos y pesos de Gauss-Legendre reescalados al intervalo [a, b].</span>
 
 <span class="sd">    Transforma los puntos y pesos estándar de Gauss-Legendre del intervalo [-1, 1]</span>
@@ -756,7 +753,8 @@ y evalúa la función resultante (que es un polinomio) en los puntos dados.</p>
 
             <details class="quote">
               <summary>Source code in <code>gauss_quadrature.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 84</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 83</span>
+<span class="normal"> 84</span>
 <span class="normal"> 85</span>
 <span class="normal"> 86</span>
 <span class="normal"> 87</span>
@@ -784,8 +782,7 @@ y evalúa la función resultante (que es un polinomio) en los puntos dados.</p>
 <span class="normal">109</span>
 <span class="normal">110</span>
 <span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">funcion_taylor</span><span class="p">(</span><span class="n">variable_independiente</span><span class="p">,</span> <span class="n">grado</span><span class="p">):</span>
+<span class="normal">112</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">funcion_taylor</span><span class="p">(</span><span class="n">variable_independiente</span><span class="p">,</span> <span class="n">grado</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Aproxima la función usando expansión en serie de Taylor de sin(2t).</span>
 
 <span class="sd">    Reemplaza sin(2t) por su expansión en serie de Taylor alrededor de t=0</span>
@@ -894,7 +891,8 @@ y evalúa la función resultante (que es un polinomio) en los puntos dados.</p>
 
             <details class="quote">
               <summary>Source code in <code>gauss_quadrature.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">116</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">115</span>
+<span class="normal">116</span>
 <span class="normal">117</span>
 <span class="normal">118</span>
 <span class="normal">119</span>
@@ -912,8 +910,7 @@ y evalúa la función resultante (que es un polinomio) en los puntos dados.</p>
 <span class="normal">131</span>
 <span class="normal">132</span>
 <span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calcular_integral_gaussiana</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+<span class="normal">134</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calcular_integral_gaussiana</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Calcula la aproximación de una integral usando cuadratura Gauss-Legendre.</span>
 
 <span class="sd">    Args:</span>
