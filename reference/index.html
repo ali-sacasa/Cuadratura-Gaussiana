@@ -514,8 +514,7 @@ numérica. La función está vectorizada para operar sobre arrays de NumPy.</p>
 <span class="normal">34</span>
 <span class="normal">35</span>
 <span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">funcion</span><span class="p">(</span><span class="n">variable_independiente</span><span class="p">):</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">funcion</span><span class="p">(</span><span class="n">variable_independiente</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Evalúa la función $\phi(t) = t^6 - t^2 sin(2t)$ en un punto o array de puntos.</span>
 
 <span class="sd">    Esta función representa el integrando principal del problema de integración</span>
@@ -536,7 +535,6 @@ numérica. La función está vectorizada para operar sobre arrays de NumPy.</p>
 <span class="sd">        &gt;&gt;&gt; t_values = np.array([1.0, 2.0])</span>
 <span class="sd">        &gt;&gt;&gt; funcion(t_values)</span>
 <span class="sd">        array([ -0.81859485,  54.90729447])</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">variable_independiente</span><span class="o">**</span><span class="mi">6</span> <span class="o">-</span> <span class="n">variable_independiente</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">variable_independiente</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -617,7 +615,8 @@ al intervalo [a, b] mediante un cambio de variable lineal.</p>
 
             <details class="quote">
               <summary>Source code in <code>gauss_quadrature.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">40</span>
+<span class="normal">41</span>
 <span class="normal">42</span>
 <span class="normal">43</span>
 <span class="normal">44</span>
@@ -654,8 +653,7 @@ al intervalo [a, b] mediante un cambio de variable lineal.</p>
 <span class="normal">75</span>
 <span class="normal">76</span>
 <span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">obtener_puntos_pesos_reescalados</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">obtener_puntos_pesos_reescalados</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Calcula los puntos y pesos de Gauss-Legendre reescalados al intervalo [a, b].</span>
 
 <span class="sd">    Transforma los puntos y pesos estándar de Gauss-Legendre del intervalo [-1, 1]</span>
@@ -750,7 +748,8 @@ y evalúa la función resultante (que es un polinomio) en los puntos dados.</p>
 
             <details class="quote">
               <summary>Source code in <code>gauss_quadrature.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 82</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 81</span>
+<span class="normal"> 82</span>
 <span class="normal"> 83</span>
 <span class="normal"> 84</span>
 <span class="normal"> 85</span>
@@ -778,8 +777,7 @@ y evalúa la función resultante (que es un polinomio) en los puntos dados.</p>
 <span class="normal">107</span>
 <span class="normal">108</span>
 <span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">funcion_taylor</span><span class="p">(</span><span class="n">variable_independiente</span><span class="p">,</span> <span class="n">grado</span><span class="p">):</span>
+<span class="normal">110</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">funcion_taylor</span><span class="p">(</span><span class="n">variable_independiente</span><span class="p">,</span> <span class="n">grado</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Aproxima la función usando expansión en serie de Taylor de sin(2t).</span>
 
 <span class="sd">    Reemplaza sin(2t) por su expansión en serie de Taylor alrededor de t=0</span>
@@ -888,7 +886,8 @@ y evalúa la función resultante (que es un polinomio) en los puntos dados.</p>
 
             <details class="quote">
               <summary>Source code in <code>gauss_quadrature.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">114</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">113</span>
+<span class="normal">114</span>
 <span class="normal">115</span>
 <span class="normal">116</span>
 <span class="normal">117</span>
@@ -906,8 +905,7 @@ y evalúa la función resultante (que es un polinomio) en los puntos dados.</p>
 <span class="normal">129</span>
 <span class="normal">130</span>
 <span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calcular_integral_gaussiana</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+<span class="normal">132</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calcular_integral_gaussiana</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Calcula la aproximación de una integral usando cuadratura Gauss-Legendre.</span>
 
 <span class="sd">    Args:</span>
