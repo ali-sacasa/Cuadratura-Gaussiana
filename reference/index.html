@@ -452,7 +452,7 @@
 <a id="gauss_quadrature.funcion"></a>
     <div class="doc doc-contents first">
 
-        <p>Evalúa la función <span class="arithmatex">\(<span class="arithmatex">\(\phi(t) = t^6 - t^2 sin(2t)\)</span>\)</span> en un punto o array de puntos.</p>
+        <p>Evalúa la función <span class="arithmatex">\(\phi(t) = t^6 - t^2 sin(2t)\)</span> en un punto o array de puntos.</p>
 <p>Esta función representa el integrando principal del problema de integración
 numérica. La función está vectorizada para operar sobre arrays de NumPy.</p>
 
@@ -480,21 +480,21 @@ numérica. La función está vectorizada para operar sobre arrays de NumPy.</p>
 
 
 <p><span class="doc-section-title">Examples:</span></p>
-    <div class="codehilite"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">funcion</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">funcion</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="go">-0.8185948536513634</span>
 </code></pre></div>
-    <div class="codehilite"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">funcion</span><span class="p">(</span><span class="n">t_values</span><span class="p">)</span>
 <span class="go">array([ -0.81859485,  54.90729447])</span>
 </code></pre></div>
     <p>La función en t=2.0:
-<span class="arithmatex">\(<span class="arithmatex">\(\phi(2) = 2^6 - 2^2 \cdot \sin(4) pprox 64 - 4 \cdot (-0.7568) pprox 54.9073\)</span>\)</span></p>
+<span class="arithmatex">\(\phi(2) = 2^6 - 2^2 \cdot \sin(4) pprox 64 - 4 \cdot (-0.7568) pprox 54.9073\)</span></p>
 
 
             <details class="quote">
               <summary>Source code in <code>gauss_quadrature.py</code></summary>
-              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
@@ -520,7 +520,7 @@ numérica. La función está vectorizada para operar sobre arrays de NumPy.</p>
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">funcion</span><span class="p">(</span><span class="n">variable_independiente</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Evalúa la función $$\phi(t) = t^6 - t^2 sin(2t)$$ en un punto o array de puntos.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Evalúa la función $\phi(t) = t^6 - t^2 sin(2t)$ en un punto o array de puntos.</span>
 
 <span class="sd">    Esta función representa el integrando principal del problema de integración</span>
 <span class="sd">    numérica. La función está vectorizada para operar sobre arrays de NumPy.</span>
@@ -542,7 +542,7 @@ numérica. La función está vectorizada para operar sobre arrays de NumPy.</p>
 <span class="sd">        array([ -0.81859485,  54.90729447])</span>
 
 <span class="sd">        La función en t=2.0:</span>
-<span class="sd">        $$\phi(2) = 2^6 - 2^2 \cdot \sin(4) \approx 64 - 4 \cdot (-0.7568) \approx 54.9073$$</span>
+<span class="sd">        $\phi(2) = 2^6 - 2^2 \cdot \sin(4) \approx 64 - 4 \cdot (-0.7568) \approx 54.9073$</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">variable_independiente</span><span class="o">**</span><span class="mi">6</span> <span class="o">-</span> <span class="n">variable_independiente</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">variable_independiente</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -611,19 +611,19 @@ al intervalo [a, b] mediante un cambio de variable lineal.</p>
 
 
 <p><span class="doc-section-title">Examples:</span></p>
-    <div class="codehilite"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">puntos</span><span class="p">,</span> <span class="n">pesos</span> <span class="o">=</span> <span class="n">obtener_puntos_pesos_reescalados</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">puntos</span><span class="p">,</span> <span class="n">pesos</span> <span class="o">=</span> <span class="n">obtener_puntos_pesos_reescalados</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Los puntos son </span><span class="si">{</span><span class="n">puntos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="go">Puntos: [1.11270167 2.         2.88729833]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Los pesos corresponden a </span><span class="si">{</span><span class="n">pesos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="go">Pesos: [0.55555556 0.88888889 0.55555556]</span>
 </code></pre></div>
     <p>La transformación se define como
-<span class="arithmatex">\(<span class="arithmatex">\(x_{[a,b]} = \frac{b-a}{2}x_{[-1,1]} + \frac{a+b}{2}\)</span>\)</span></p>
+<span class="arithmatex">\(x_{[a,b]} = \frac{b-a}{2}x_{[-1,1]} + \frac{a+b}{2}\)</span></p>
 
 
             <details class="quote">
               <summary>Source code in <code>gauss_quadrature.py</code></summary>
-              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">43</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
@@ -670,7 +670,7 @@ al intervalo [a, b] mediante un cambio de variable lineal.</p>
 <span class="sd">    Args:</span>
 <span class="sd">        a (float) es el límite inferior del intervalo de integración.</span>
 <span class="sd">        b (float) es el límite superior del intervalo de integración.</span>
-<span class="sd">        N (int) es el número de puntos de cuadratura (grado de la aproximación).</span>
+<span class="sd">        N (int) es el número de puntos de cuadratura, siendo el grado de la aproximación.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        tuple: Una tupla (puntos, pesos) donde</span>
@@ -688,7 +688,7 @@ al intervalo [a, b] mediante un cambio de variable lineal.</p>
 <span class="sd">        Pesos: [0.55555556 0.88888889 0.55555556]</span>
 
 <span class="sd">        La transformación se define como</span>
-<span class="sd">        $$x_{[a,b]} = \\frac{b-a}{2}x_{[-1,1]} + \\frac{a+b}{2}$$</span>
+<span class="sd">        $x_{[a,b]} = \\frac{b-a}{2}x_{[-1,1]} + \\frac{a+b}{2}$</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">N</span> <span class="o">&lt;=</span><span class="mi">0</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;N debe ser un entero positivo&quot;</span><span class="p">)</span>
@@ -743,20 +743,20 @@ y evalúa la función resultante (que es un polinomio) en los puntos dados.</p>
 
 
 <p><span class="doc-section-title">Examples:</span></p>
-    <div class="codehilite"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">t_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span><span class="p">,</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">funcion_taylor</span><span class="p">(</span><span class="n">t_values</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valores: </span><span class="si">{</span><span class="n">valores</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valores </span><span class="si">{</span><span class="n">valores</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="go">Valores: [ -0.83333333  54.4       ]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expresión: </span><span class="si">{</span><span class="n">expr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expresión </span><span class="si">{</span><span class="n">expr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="go">Expresión: t**6 - 2*t**4 + (2/3)*t**2</span>
 </code></pre></div>
-    <p>La serie de Taylor para sin(2t) hasta grado 3 es:
-<span class="arithmatex">\(<span class="arithmatex">\(\sin(2t) ≈ 2t - \frac{(2t)^3}{3!} = 2t - \frac{8t^3}{6}\)</span>\)</span></p>
+    <p>La serie de Taylor para sin(2t) hasta grado 3 es
+<span class="arithmatex">\(\sin(2t) ≈ 2t - \frac{(2t)^3}{3!} = 2t - \frac{8t^3}{6}\)</span></p>
 
 
             <details class="quote">
               <summary>Source code in <code>gauss_quadrature.py</code></summary>
-              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 84</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 84</span>
 <span class="normal"> 85</span>
 <span class="normal"> 86</span>
 <span class="normal"> 87</span>
@@ -803,13 +803,13 @@ y evalúa la función resultante (que es un polinomio) en los puntos dados.</p>
 <span class="sd">    Examples:</span>
 <span class="sd">        &gt;&gt;&gt; t_values = np.array([1.0, 2.0])</span>
 <span class="sd">        &gt;&gt;&gt; valores, expr = funcion_taylor(t_values, 4)</span>
-<span class="sd">        &gt;&gt;&gt; print(f&quot;Valores: {valores}&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; print(f&quot;Valores {valores}&quot;)</span>
 <span class="sd">        Valores: [ -0.83333333  54.4       ]</span>
-<span class="sd">        &gt;&gt;&gt; print(f&quot;Expresión: {expr}&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; print(f&quot;Expresión {expr}&quot;)</span>
 <span class="sd">        Expresión: t**6 - 2*t**4 + (2/3)*t**2</span>
 
-<span class="sd">        La serie de Taylor para sin(2t) hasta grado 3 es:</span>
-<span class="sd">        $$\\sin(2t) ≈ 2t - \\frac{(2t)^3}{3!} = 2t - \\frac{8t^3}{6}$$</span>
+<span class="sd">        La serie de Taylor para sin(2t) hasta grado 3 es</span>
+<span class="sd">        $\\sin(2t) ≈ 2t - \\frac{(2t)^3}{3!} = 2t - \\frac{8t^3}{6}$</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">serie</span> <span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">grado</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span>
     <span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">**</span><span class="mi">6</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">serie</span>
@@ -885,7 +885,7 @@ y evalúa la función resultante (que es un polinomio) en los puntos dados.</p>
 
 
 <p><span class="doc-section-title">Examples:</span></p>
-    <div class="codehilite"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gauss_quadrature</span> <span class="kn">import</span> <span class="n">funcion</span><span class="p">,</span> <span class="n">calcular_integral_gaussiana</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gauss_quadrature</span> <span class="kn">import</span> <span class="n">funcion</span><span class="p">,</span> <span class="n">calcular_integral_gaussiana</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">resultado</span> <span class="o">=</span> <span class="n">calcular_integral_gaussiana</span><span class="p">(</span><span class="n">funcion</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El resultado es </span><span class="si">{</span><span class="n">resultado</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="go">Resultado: 578.666667</span>
@@ -894,7 +894,7 @@ y evalúa la función resultante (que es un polinomio) en los puntos dados.</p>
 
             <details class="quote">
               <summary>Source code in <code>gauss_quadrature.py</code></summary>
-              <div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">116</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">116</span>
 <span class="normal">117</span>
 <span class="normal">118</span>
 <span class="normal">119</span>
@@ -995,6 +995,8 @@ y evalúa la función resultante (que es un polinomio) en los puntos dados.</p>
     
     
       <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       

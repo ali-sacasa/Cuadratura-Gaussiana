@@ -370,16 +370,16 @@
 <p>Evaluar la integral numéricamente, se escribiría como</p>
 <p>resultado = np.sum(pesos*funcion(puntos))</p>
 <p>print(f"Integral aproximada con N={N} es {resultado:.8f}")</p>
-<h3 id="teniendo-una-integral-aproximada-con-n4-57866666667-siendo-un-valor-esperable">Teniendo una integral aproximada con <span class="arithmatex">\(N=4, \ 578.66666667\)</span> siendo un valor esperable.</h3>
-<h3 id="asi-obtener_puntos_pesos_reescaladosa-b-n-devuelve-los-puntos-optimos-y-sus-pesos-correspondientes-en-el-intervalo-ab-de-forma-tal-que-la-integral-se-aproxima-como-la-suma-ponderada-sum_i1n-w_i-phix_i">Así, obtener_puntos_pesos_reescalados(a, b, N) devuelve los puntos óptimos y sus pesos correspondientes en el intervalo [a,b]. De forma tal que, la integral se aproxima como la suma ponderada <span class="arithmatex">\(\sum_{i=1}^N w_i \phi(x_i)\)</span>.</h3>
-<h3 id="el-numero-de-nodos-n-afecta-directamente-la-precision-del-resultado">El número de nodos <span class="arithmatex">\(N\)</span> afecta directamente la precisión del resultado.</h3>
+<h2 id="teniendo-una-integral-aproximada-con-n4-57866666667-siendo-un-valor-esperable">Teniendo una integral aproximada con <span class="arithmatex">\(N=4, \ 578.66666667\)</span> siendo un valor esperable.</h2>
+<h2 id="asi-obtener_puntos_pesos_reescaladosa-b-n-devuelve-los-puntos-optimos-y-sus-pesos-correspondientes-en-el-intervalo-ab-de-forma-tal-que-la-integral-se-aproxima-como-la-suma-ponderada-sum_i1n-w_i-phix_i">Así, obtener_puntos_pesos_reescalados(a, b, N) devuelve los puntos óptimos y sus pesos correspondientes en el intervalo [a,b]. De forma tal que, la integral se aproxima como la suma ponderada <span class="arithmatex">\(\sum_{i=1}^N w_i \phi(x_i)\)</span>.</h2>
+<h2 id="el-numero-de-nodos-n-afecta-directamente-la-precision-del-resultado">El número de nodos <span class="arithmatex">\(N\)</span> afecta directamente la precisión del resultado.</h2>
 <p>from gauss_quadrature import funcion, obtener_puntos_pesos_reescalados
 import numpy as np</p>
 <p>a, b = 1, 3</p>
 <p>print("Comparación de precisión con diferentes valores de N:")
 print("N\tResultado\t\tDiferencia")
 print("-" * 50)</p>
-<p>Se calcula la solución de referencia, cuya cual, es la analítica.</p>
+<h2 id="se-calcula-la-solucion-de-referencia-cuya-cual-es-la-analitica">Se calcula la solución de referencia, cuya cual, es la analítica.</h2>
 <p>from gauss_quadrature import solucion_analitica
 ref = float(solucion_analitica)</p>
 <p>for N in range(2, 7):
@@ -388,67 +388,88 @@ ref = float(solucion_analitica)</p>
     error = abs(resultado - ref)
     print(f"{N}\t{resultado:.6f}\t\t{error:.2e}")</p>
 <p>print(f"\nValor de referencia (analítico): {ref:.8f}")</p>
-<h1 id="comparacion-de-precision-con-diferentes-valores-de-n">Comparación de precisión con diferentes valores de N</h1>
-<div class="arithmatex">\[
-\begin{array}{|c|c|c|}
-\hline
-N &amp; \text{Resultado} &amp; \text{Diferencia} \\
-\hline
-2 &amp; 584.885678 &amp; 6.22 \times 10^{0} \\
-3 &amp; 578.666667 &amp; 1.78 \times 10^{-14} \\
-4 &amp; 578.666667 &amp; 1.78 \times 10^{-14} \\
-5 &amp; 578.666667 &amp; 1.78 \times 10^{-14} \\
-6 &amp; 578.666667 &amp; 1.78 \times 10^{-14} \\
-\hline
-\end{array}
-\]</div>
+<h2 id="comparacion-de-precision-con-diferentes-valores-de-n">Comparación de precisión con diferentes valores de N</h2>
+<table>
+<thead>
+<tr>
+<th>N</th>
+<th>Resultado</th>
+<th>Diferencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>584.885678</td>
+<td>6.22e+00</td>
+</tr>
+<tr>
+<td>3</td>
+<td>578.666667</td>
+<td>1.78e-14</td>
+</tr>
+<tr>
+<td>4</td>
+<td>578.666667</td>
+<td>1.78e-14</td>
+</tr>
+<tr>
+<td>5</td>
+<td>578.666667</td>
+<td>1.78e-14</td>
+</tr>
+<tr>
+<td>6</td>
+<td>578.666667</td>
+<td>1.78e-14</td>
+</tr>
+</tbody>
+</table>
 <p>El valor de referencia analítico es aproximadamente <span class="arithmatex">\(578.66666667\)</span>. Con <span class="arithmatex">\(N \leqslant 3\)</span> se alcanza precisión numérica máxima para esta función.</p>
 <hr />
-<h3 id="para-funciones-que-incluyen-terminos-trascendentales-podemos-usar-expansiones-de-taylor">Para funciones que incluyen términos trascendentales, podemos usar expansiones de Taylor.</h3>
+<h2 id="para-funciones-que-incluyen-terminos-trascendentales-podemos-usar-expansiones-de-taylor">Para funciones que incluyen términos trascendentales, podemos usar expansiones de Taylor.</h2>
 <p>from gauss_quadrature import funcion_taylor, obtener_puntos_pesos_reescalados
 import numpy as np</p>
 <p>a, b = 1, 3
 N = 4
 grado_taylor = 4  # Grado de la expansión de Taylor</p>
 <p>puntos, pesos = obtener_puntos_pesos_reescalados(a, b, N)</p>
-<h3 id="se-evalua-usando-expansion-de-taylor">Se evalúa usando expansión de Taylor</h3>
+<h2 id="se-evalua-usando-expansion-de-taylor">Se evalúa usando expansión de Taylor</h2>
 <p>valores, expr_polinomio = funcion_taylor(puntos, grado_taylor)</p>
 <p>resultado_taylor = np.sum(pesos * valores)</p>
 <p>print(f"Aproximación con el teorema de Taylor (grado {grado_taylor}) {resultado_taylor:.8f}")</p>
 <p>print(f"La expresión polinómica equivalente es {expr_polinomio}")</p>
-<h3 id="sin-embargo-para-un-uso-mas-sencillo-podemos-emplear-la-funcion-calcular_integral_gaussiana">Sin embargo, para un uso más sencillo, podemos emplear la función calcular_integral_gaussiana.</h3>
+<h2 id="sin-embargo-para-un-uso-mas-sencillo-podemos-emplear-la-funcion-calcular_integral_gaussiana">Sin embargo, para un uso más sencillo, podemos emplear la función calcular_integral_gaussiana.</h2>
 <p>from gauss_quadrature import funcion, calcular_integral_gaussiana</p>
 <p>resultado = calcular_integral_gaussiana(funcion, 1, 3, 5)</p>
 <p>print(f"Resultado con función de conveniencia dada {resultado:.8f}")</p>
-<h3 id="probando-con-diferentes-valores-de-n">Probando con diferentes valores de N</h3>
+<h2 id="probando-con-diferentes-valores-de-n">Probando con diferentes valores de N</h2>
 <p>print("\nPrueba rápida con diferentes N")</p>
 <p>for N in [2, 3, 4, 5]:</p>
-<div class="codehilite"><pre><span></span><code><span class="ss">resultado</span> <span class="o">=</span> calcular_integral_gaussiana<span class="p">(</span>funcion<span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> N<span class="p">)</span>
+<pre><code>resultado = calcular_integral_gaussiana(funcion, 1, 3, N)
 
-print<span class="p">(</span>f<span class="s2">&quot;N={N}: {resultado:.8f}&quot;</span><span class="p">)</span>
-</code></pre></div>
-
+print(f"N={N}: {resultado:.8f}")
+</code></pre>
 <hr />
-<h3 id="si-se-buscara-con-mayor-precision-podria-ser">Si se buscara con mayor precisión podría ser</h3>
+<h2 id="si-se-buscara-con-mayor-precision-podria-ser">Si se buscara con mayor precisión podría ser</h2>
 <p>from gauss_quadrature import funcion, calcular_integral_gaussiana, solucion_analitica
 import numpy as np</p>
 <p>def encontrar_N_optimo(tolerancia=1e-10):
     """Encuentra el N mínimo que satisface una tolerancia de error"""
     ref = float(solucion_analitica)</p>
-<div class="codehilite"><pre><span></span><code>for N in range(2, 10):
+<pre><code>for N in range(2, 10):
     resultado = calcular_integral_gaussiana(funcion, 1, 3, N)
     error = abs(resultado - ref)
 
     if error &lt;= tolerancia:
-        print(f&quot;N={N} satisface la tolerancia dada error = {error:.2e}&quot;)
+        print(f"N={N} satisface la tolerancia dada error = {error:.2e}")
         return N
     else:
-        print(f&quot;  N={N} con error = {error:.2e}&quot;)
+        print(f"  N={N} con error = {error:.2e}")
 
-print(&quot;No se alcanzó la tolerancia con N &lt;= 9&quot;)
+print("No se alcanzó la tolerancia con N &lt;= 9")
 return None
-</code></pre></div>
-
+</code></pre>
 <h3 id="se-ejecuta-para-hallar-un-posible-n-que-satifaga-las-condiciones">Se ejecuta para hallar un posible N que satifaga las condiciones.</h3>
 <p>print("Búsqueda del N óptimo (tolerancia = 1e-10):")
 encontrar_N_optimo()</p>
@@ -460,21 +481,39 @@ N=2: &amp; \text{error } = 6.22 \times 10^{0} \\
 N=3: &amp; \text{satisface la tolerancia } (1.78 \times 10^{-14})
 \end{array}
 \]</div>
-<h3 id="asi-la-cuadratura-de-gauss-con-n-puntos-integra-exactamente-polinomios-de-grado-2n-1">Así, la cuadratura de Gauss con <span class="arithmatex">\(N\)</span> puntos integra exactamente polinomios de grado <span class="arithmatex">\(2N-1\)</span>.</h3>
-<div class="arithmatex">\[
-\begin{array}{|c|c|}
-\hline
-N &amp; \text{Grado máximo exacto} \\
-\hline
-2 &amp; 3 \\
-3 &amp; 5 \\
-4 &amp; 7 \\
-5 &amp; 9 \\
-6 &amp; 11 \\
-\hline
-\end{array}
-\]</div>
-<h3 id="phit-t6-t2-sin2t-tiene-una-parte-polinomial-de-grado-6-para-integrar-exactamente-un-polinomio-de-grado-6-necesitamos-al-menos-n4-que-integra-exactamente-hasta-grado-7"><span class="arithmatex">\(\phi(t) = t^6 - t^2 \sin(2t)\)</span> tiene una parte polinomial de grado 6. Para integrar exactamente un polinomio de grado 6, necesitamos al menos N=4 (que integra exactamente hasta grado 7).</h3>
+<hr />
+<h2 id="asi-la-cuadratura-de-gauss-con-n-puntos-integra-exactamente-polinomios-de-grado-2n-1">Así, la cuadratura de Gauss con <span class="arithmatex">\(N\)</span> puntos integra exactamente polinomios de grado <span class="arithmatex">\(2N-1\)</span>.</h2>
+<table>
+<thead>
+<tr>
+<th>N</th>
+<th>Grado máximo exacto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>7</td>
+</tr>
+<tr>
+<td>5</td>
+<td>9</td>
+</tr>
+<tr>
+<td>6</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<h2 id="phit-t6-t2-sin2t-tiene-una-parte-polinomial-de-grado-6-para-integrar-exactamente-un-polinomio-de-grado-6-necesitamos-al-menos-n4-que-integra-exactamente-hasta-grado-7"><span class="arithmatex">\(\phi(t) = t^6 - t^2 \sin(2t)\)</span> tiene una parte polinomial de grado 6. Para integrar exactamente un polinomio de grado 6, necesitamos al menos N=4 (que integra exactamente hasta grado 7).</h2>
 
 
 
@@ -527,6 +566,8 @@ N &amp; \text{Grado máximo exacto} \\
     
     
       <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
