@@ -1,10 +1,22 @@
-# Referencia de funciones
+# Referencia de Funciones – Gauss-Legendre
 
-Este módulo contiene las funciones implementadas para aproximar integrales mediante **cuadratura Gauss-Legendre ** y manipulación simbólica con **SymPy**.
+Esta página contiene la documentación automática de las funciones definidas en el módulo `gauss_quadrature.py`, generada mediante **mkdocstrings**.
 
+---
 
-::: gauss_quadrature
-    handler: python
-    options:
-      docstring_style: google
-      paths: [".."]   # Sube un nivel desde docs para encontrar gauss_quadrature.py
+## Documentación Automática
+
+::: gauss_quadrature.funcion
+
+::: gauss_quadrature.obtener_puntos_pesos_reescalados
+
+::: gauss_quadrature.funcion_taylor
+
+::: gauss_quadrature.calcular_integral_gaussiana
+
+---
+
+## Posibles notas técnicas de uso
+
+- Los docstrings siguen el estilo **Google** y son compatibles con PEP 257
+- Cada función incluye ejemplos ejecutables y notación matemática en LaTeX

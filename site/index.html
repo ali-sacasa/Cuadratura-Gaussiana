@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduccion" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -166,6 +171,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="." class="md-nav__link md-nav__link--active">
@@ -267,6 +274,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -282,11 +291,22 @@
 
 
 
-  <h1>Home</h1>
-
-<p># Introducción</p>
-<p>El objetivo de esta documentación es presentar la implementación del **método de cuadratura Gauss-Legendre** para aproximar integrales definidas de funciones continuas para efectos del curso de Física Computacional FS0432, específicamente la tarea II y otros fines más allá de este, puesto que, la integración numérica es una herramienta fundamental en física y matemáticas aplicadas.  </p>
-<p>Este método permite obtener resultados precisos con un número reducido de evaluaciones de la función. Se demostrará su implementación, ejemplos de uso y documentación automática de funciones Python mediante docstrings.</p>
+<h1 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h1>
+<p>En física y matemáticas aplicadas, con frecuencia nos enfrentamos a la necesidad de evaluar <strong>integrales definidas</strong> de funciones continuas cuyo cálculo analítico resulta complejo o incluso imposible de realizar de forma directa. Estas integrales aparecen en múltiples contextos:  </p>
+<ul>
+<li>Cálculo de momentos de inercia en cuerpos continuos.  </li>
+<li>Evaluación de energías potenciales en campos físicos.  </li>
+<li>Integración de propagadores y funciones de Green en mecánica cuántica.  </li>
+</ul>
+<p>Para abordar este tipo de problemas, es fundamental combinar <strong>rigor matemático</strong> con <strong>eficiencia computacional</strong>. Una de las herramientas más poderosas para este propósito es la <strong>cuadratura de Gauss-Legendre</strong>, que permite aproximar integrales definidas con una <strong>precisión controlada</strong> usando un número limitado de evaluaciones de la función.  </p>
+<p>En esta documentación se explorará</p>
+<ol>
+<li>El <strong>método de cuadratura Gauss-Legendre</strong> y su fundamentación teórica.  </li>
+<li>La <strong>aplicación a funciones trascendentales</strong> mediante expansiones en serie de Taylor.  </li>
+<li>Ejemplos prácticos de uso en Python utilizando el módulo <code>gauss_quadrature.py</code>.  </li>
+<li>Una <strong>referencia completa de las funciones</strong> implementadas y sus docstrings.  </li>
+</ol>
+<p>El objetivo de este proyecto es proporcionar una guía clara y completa, que combine teoría, implementación y ejemplos, para que el lector pueda comprender y aplicar la <strong>cuadratura Gauss-Legendre</strong> en contextos de física aplicada y matemáticas computacionales. Esto para efectos del curso de Física Computacional FS0432, específicamente la tarea II y otros fines más allá de este, puesto que, la integración numérica es una herramienta fundamental.</p>
 
 
 

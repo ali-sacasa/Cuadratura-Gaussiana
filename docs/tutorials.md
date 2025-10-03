@@ -6,13 +6,13 @@ En este tutorial se muestra cómo utilizar el módulo "gauss_quadrature.py" para
 
 ## Aproximación de una integral definida
 
-Consideremos la función:
+Consideremos la función
 
 $$
-f(t) = t^6 - t^2 \sin(2t),
+\phi(t) = t^6 - t^2 \sin(2t)
 $$
 
-y el intervalo de integración \([1,3]\). Podemos aproximar su integral usando \(N\) nodos de Gauss-Legendre:
+y el intervalo de integración \([1,3]\). Podemos aproximar su integral usando \(N\) nodos de Gauss-Legendre
 
 ```python
 from gauss_quadrature import funcion, obtener_puntos_pesos_reescalados
@@ -25,5 +25,5 @@ N = 4
 puntos, pesos = obtener_puntos_pesos_reescalados(1, 3, N)
 
 # Evaluar la integral numéricamente
-resultado = np.sum(pesos * funcion(puntos))
-print("Integral aproximada:", resultado)
+resultado = np.sum(pesos*funcion(puntos))
+print("Integral aproximada", resultado)

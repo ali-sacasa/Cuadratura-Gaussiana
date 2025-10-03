@@ -1,33 +1,30 @@
 site_name: "Cuadratura Gauss-Legendre"
 site_description: "Documentación del módulo gauss_quadrature con ejemplos y referencia automática"
-site_author: "Sebastián Alí Sacasa Céspedes - Correo: sebastian.sacasa@ucr.ac.cr"
+site_author: "Sebastián Alí Sacasa Céspedes"
 
 theme:
   name: material
   palette:
-    primary: red
-    accent: amber
-  font:
-    text: Roboto
-    code: Roboto Mono
+    primary: amber
+    accent: red
+  features:
+    - content.code.copy
 
 markdown_extensions:
   - admonition
   - codehilite
-  - toc:
-      permalink: true
+  - pymdownx.superfences
   - pymdownx.arithmatex:
       generic: true
 
 extra_javascript:
-  - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-  - Home: index.md
-  - Método: explanation.md
+  - Inicio: index.md
+  - Explicación del Método: explanation.md
   - Tutorial: tutorials.md
-  - Referencia: reference.md
+  - Referencia de Funciones: reference.md
 
 plugins:
   - mkdocstrings:
